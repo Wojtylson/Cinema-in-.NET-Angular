@@ -1,0 +1,17 @@
+<body>
+  <div class="container">
+    <div class="header">
+      Witamy w kinie WWF!<br /><i>Kliknij w film, aby dowiedzieć się więcej!</i>
+    </div>
+    <hr />
+    <ul class="media-container">
+      <li class="movie-item" *ngFor="let movie of service.list; let i = index">
+        <div class="title">{{ movie.title }}</div>
+        <a [routerLink]="['/home/movie', movie.id]">
+          <img [src]="movie.image" [alt]="movie.title" />
+        </a>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+  </div>
+</body>

@@ -1,0 +1,25 @@
+.spacer {
+  flex: 1 1 auto;
+}
+.custom {
+  background-color: pink;
+  padding: 0 5px;
+  height: 60px;
+  overflow: hidden;
+  display: flex;
+}
+.nav-button {
+  margin: 0 5px;
+}
+.login-button {
+  margin-left: 5px;
+}
+span {
+  font-size: 40px;
+  margin: 0;
+  color: #fff;
+  font-family: "Impact", sans-serif;
+}
+a {
+  text-decoration: none;
+}

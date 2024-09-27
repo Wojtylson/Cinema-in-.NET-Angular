@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  font-family: "Poppins", sans-serif;
+  background-color: pink;
+  height: 30px;
+  text-align: center;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+p {
+  color: white;
+}
+
+hr {
+  border: none;
+  height: 4px;
+  background-color: #333;
+  width: 100%;
+}

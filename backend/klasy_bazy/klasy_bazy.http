@@ -1,0 +1,6 @@
+@klasy_bazy_HostAddress = http://localhost:5206
+
+GET {{klasy_bazy_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,61 @@
+<mat-toolbar class="custom">
+  <a routerLink="/home"
+    ><span><mat-icon>camera</mat-icon> WWF CINEMA</span></a
+  >
+  <div class="spacer"></div>
+  <div *ngIf="this.umservice.getLogged()">
+    <button
+      mat-raised-button
+      color="accent"
+      class="login-button"
+      routerLink="/admin"
+      (click)="userprofile()"
+    >
+      Profil użytkownika
+    </button>
+  </div>
+  <div *ngIf="this.umservice.getAdmin()">
+    <button
+      mat-raised-button
+      color="accent"
+      class="login-button"
+      routerLink="/admin"
+      (click)="adminprofile()"
+    >
+      Profil admina
+    </button>
+  </div>
+  <a mat-raised-button color="accent" class="nav-button" routerLink="/home"
+    >Strona główna</a
+  >
+  <a
+    mat-raised-button
+    color="accent"
+    class="nav-button"
+    routerLink="/screenings"
+    >Repertuar</a
+  >
+  <a mat-raised-button color="accent" class="login-button" routerLink="/about"
+    >O nas</a
+  >
+  <div *ngIf="!this.umservice.getLogged()">
+    <button
+      mat-raised-button
+      color="accent"
+      class="login-button"
+      routerLink="/logowanie"
+    >
+      Zaloguj
+    </button>
+  </div>
+  <div *ngIf="this.umservice.getLogged()">
+    <button
+      mat-raised-button
+      color="accent"
+      class="login-button"
+      (click)="logout()"
+    >
+      Wyloguj
+    </button>
+  </div>
+</mat-toolbar>

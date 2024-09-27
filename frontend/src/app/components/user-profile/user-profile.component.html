@@ -1,0 +1,37 @@
+<body>
+  <div class="heading">
+    <h1>Witamy w panelu Użytkownika</h1>
+  </div>
+  <div class="container">
+    <section class="about">
+      <div class="about-image">
+        <img
+          src="https://as1.ftcdn.net/v2/jpg/02/01/33/54/1000_F_201335438_CNpY0iWaXXAV95Gj8BPB0tEJlMcxWeaZ.jpg"
+          alt="jestem_zwykłym_userem"
+        />
+      </div>
+      <div class="about-content">
+        <h2>Możesz tutaj zobaczyć swoje dane, a także rezerwacje.</h2>
+        <p>
+          <b>Login:</b> {{ user.email }} <br />
+          <b>Hasło:</b> {{ user.password }} <br />
+          <b>Rezerwacje:</b>
+        </p>
+        <div *ngIf="this.rdd && this.rdd.length > 0">
+          <p *ngFor="let r of this.rdd">
+            <b>ID: </b> {{ r.id }} <b>Dzień: </b>{{ r.day }}<b> Godzina: </b
+            >{{ r.hour }} <b>Film: </b> {{ r.movie.title }}<b> Miejsca: </b>
+            {{ r.seats }} <br />
+          </p>
+        </div>
+        <div *ngIf="!this.rdd || this.rdd.length === 0">
+          Niestety nie udało mi się zaimplementować szczegółów rezerwacji :(
+          <img
+            src="https://pl.fotoomnia.com/zdjecia/258ad79424b4b028586ec8e4ac1013de.jpg"
+            alt="smutna_buźka"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+</body>

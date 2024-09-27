@@ -1,0 +1,116 @@
+<body>
+  <div class="heading">
+    <h1><br />Witamy w panelu Admina</h1>
+    <p></p>
+  </div>
+  <div class="container">
+    <section class="about">
+      <div class="about-image">
+        <img
+          src="https://as2.ftcdn.net/v2/jpg/03/08/33/75/1000_F_308337583_CahQnaQMDdhkNnAY7Q0k7dhZZFCEmj7p.jpg"
+          alt="jestem_adminem"
+        />
+      </div>
+      <div class="about-content">
+        <h2>
+          Możesz tutaj dodać, usunąć i wyświetlić dostępne filmy, użytkowników
+          itp. Pamiętaj, że filmy naraz mogą być tylko 4.
+        </h2>
+
+        <div class="button-contaienr">
+          <button class="read-more" (click)="toggleUsers()">
+            Wyświetl wszystkich użytkowników
+          </button>
+          <button class="read-more" (click)="toggleMovies()">
+            Wyświetl wszystkie filmy
+          </button>
+
+          <button class="read-more" (click)="toggleAddMovie()">
+            Dodaj film</button
+          ><br />
+        </div>
+        <div *ngIf="showUsers">
+          <br />
+          <p *ngFor="let user of users">
+            <br />
+            <b>Id: </b>{{ user.id }}<br />
+            <b>Login:</b> {{ user.email }} <br /><b>Hasło:</b> {{ user.password
+            }}<br />
+            <button class="read-more" (click)="deleteUser(user.id)">
+              Usuń użytkownika o Id: {{ user.id }}
+            </button>
+          </p>
+        </div>
+        <div *ngIf="showMovies">
+          <br />
+          <p *ngFor="let movie of this.service.list">
+            <br />
+            <b>Id: </b>{{ movie.id }} <br />
+            <b>Tytuł: </b> {{ movie.title }}<br />
+            <button class="read-more" (click)="deleteMovie(movie.id)">
+              Usuń film o Id: {{ movie.id }}
+            </button>
+          </p>
+        </div>
+        <div *ngIf="showAddMovies">
+          <br />
+          <form
+            autocomplete="new-password"
+            #form="ngForm"
+            (submit)="onSubmit(form)"
+          >
+            <h1><b>Dodaj nowy film</b></h1>
+            <div class="form-register">
+              <input type="hidden" name="id" [value]="service.formData.id" />
+              <label for="title">Tytuł</label>
+              <input
+                placeholder="Podaj tytuł"
+                #title="ngModel"
+                name="title"
+                required
+                class="required"
+                [(ngModel)]="service.formData.title"
+              />
+            </div>
+            <div class="form-register">
+              <label for="description">Opis</label>
+              <input
+                placeholder="Podaj opis"
+                #opis="ngModel"
+                name="opis"
+                required
+                class="required"
+                [(ngModel)]="service.formData.synopsis"
+              />
+            </div>
+            <div class="form-register">
+              <label for="title">Gatunek</label>
+              <input
+                placeholder="Podaj gatunki"
+                #genre="ngModel"
+                name="genre"
+                required
+                class="required"
+                [(ngModel)]="service.formData.genre"
+              />
+            </div>
+            <div class="form-register">
+              <label for="image">Obraz</label>
+              <input
+                placeholder="Podaj adres obrazu"
+                #image="ngModel"
+                name="image"
+                required
+                class="required"
+                [(ngModel)]="service.formData.image"
+              />
+            </div>
+            <button class="read-more" type="submit">
+              <b>Dodaj film</b>&#8594;
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>

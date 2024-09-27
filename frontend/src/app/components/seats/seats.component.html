@@ -1,0 +1,30 @@
+<body>
+  <div class="heading">
+    <h1>
+      <br />Wybierz miejsca!<br /><br />
+      {{ this.selectedMovie.title }} {{ this.data }} {{ this.hour }}
+    </h1>
+  </div>
+
+  <div class="container">
+    <div class="seats-grid">
+      <button
+        *ngFor="let seat of allseats"
+        class="seat"
+        [ngClass]="{
+          selected: selectedSeats.includes(seat),
+          taken: reservedSeats.includes(seat)
+        }"
+        (click)="selectSeat(seat)"
+        [disabled]="reservedSeats.includes(seat)"
+      >
+        {{ seat }}
+      </button>
+    </div>
+    <div class="screen"><b>EKRAN</b></div>
+    <div class="button-container">
+      <a routerLink="/screenings">Powrót</a>
+      <a (click)="moveOn()">Przejdź dalej</a>
+    </div>
+  </div>
+</body>

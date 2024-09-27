@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background-color: rgb(240, 186, 226);
+}
+
+.container {
+  border: #333 solid;
+  background-color: white;
+  width: 80%;
+  margin: 100px auto;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.heading {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px auto;
+}
+.heading h1 {
+  font-size: 50px;
+  color: white;
+  margin-bottom: 25px;
+  position: relative;
+}
+.heading h1::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  display: block;
+  margin: 0 auto;
+}
+.screen {
+  width: 550px;
+  background-color: black;
+  height: 20px;
+  text-align: center;
+  align-items: center;
+  margin: auto;
+}
+
+.seats-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 100px);
+  grid-template-rows: repeat(4, 100px);
+  gap: 30px;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.seat {
+  width: 100px;
+  height: 100px;
+  background-color: violet;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.seat:hover {
+  background-color: pink;
+}
+.seat.selected {
+  background-color: green;
+}
+.seat.taken {
+  background-color: red;
+}
+.screen {
+  width: 1000px;
+  color: white;
+  height: 50px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.button-container a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 19px;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: 0.3s ease;
+  background-color: violet;
+}

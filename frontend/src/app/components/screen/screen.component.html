@@ -1,0 +1,47 @@
+<body>
+  <div class="heading">
+    <h1><br />Wybierz film!</h1>
+  </div>
+  <div class="movie-selector-container">
+    <label for="movie">Wybierz film</label>
+    <select (change)="onMovieChange($event)" class="movie-select">
+      <option value="" disabled selected>Wybierz film</option>
+      <option *ngFor="let movie of service.list" [value]="movie.id">
+        {{ movie.title }}
+      </option>
+    </select>
+    <label for="date"><br />Wybierz dzień</label>
+    <input
+      [(ngModel)]="data"
+      type="date"
+      [attr.min]="minDate"
+      class="movie-select"
+    />
+    <label for="hour"><br />Wybierz godzinę</label>
+    <select id="hour" [(ngModel)]="hour" class="movie-select">
+      <option value="" disabled selected>Wybierz godzinę</option>
+      <option value="13">13:00</option>
+      <option value="16">16:00</option>
+      <option value="19">19:00</option>
+    </select>
+    <button (click)="onSubmit()" type="submit" class="button-44">
+      Przejdź dalej
+    </button>
+  </div>
+  <div *ngIf="selectedMovie">
+    <div class="container">
+      <section class="about">
+        <div class="about-image">
+          <img [src]="selectedMovie.image" [alt]="selectedMovie.title" />
+        </div>
+        <div class="about-content">
+          <h1>{{ selectedMovie.title | uppercase }}</h1>
+          <h2>Gatunek</h2>
+          <p>{{ selectedMovie.genre }}</p>
+          <h2>Opis</h2>
+          <p>{{ selectedMovie.synopsis }}</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,23 @@
+<body>
+  <div class="container" *ngIf="movie">
+    <section class="about">
+      <div class="about-image">
+        <img [src]="movie.image" [alt]="movie.title" />
+      </div>
+      <div class="about-content">
+        <h1>{{ movie.title | uppercase }}</h1>
+        <h2>Gatunek</h2>
+        <p>{{ movie.genre }}</p>
+        <h2>Opis</h2>
+        <p>{{ movie.synopsis }}</p>
+        <a href="https://www.imdb.com/" class="read-more" target="_blank"
+          >Czytaj więcej</a
+        >
+        <div class="button-container">
+          <a class="read-more" routerLink="/home">Powrót</a>
+          <a class="read-more" routerLink="/screenings">Kup bilety</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>

@@ -1,0 +1,91 @@
+<body>
+  <h1 id="start">
+    <b>LOGOWANIE <br />I REJESTRACJA</b><br />
+    <img
+      src="https://www.clipartmax.com/png/small/22-225719_other-popular-clip-arts-old-fashioned-movie-camera.png"
+      alt="Other Popular Clip Arts - Old Fashioned Movie Camera @clipartmax.com"
+    />
+  </h1>
+  <div class="container">
+    <div class="form2">
+      <form
+        #formLogin="ngForm"
+        (submit)="onLogin(formLogin)"
+        autocomplete="new-password"
+      >
+        <h1><b>LOGOWANIE</b></h1>
+        <div class="form-control">
+          <label for="email">E-mail</label>
+          <input
+            autocomplete="new-email"
+            type="email"
+            placeholder="Podaj login"
+            #emaillogin="ngModel"
+            name="emaillogin"
+            [(ngModel)]="service.formLogin.email"
+          />
+        </div>
+        <div class="form-control">
+          <label for="password">Hasło</label>
+          <input
+            autocomplete="new-password"
+            type="password"
+            placeholder="Podaj hasło"
+            #passwordlogin="ngModel"
+            name="passwordlogin"
+            [(ngModel)]="service.formLogin.password"
+          />
+        </div>
+        <div class="break"></div>
+        <button class="button-44" type="submit">
+          <b>ZALOGUJ SIĘ</b>&#8594;
+        </button>
+      </form>
+    </div>
+    <div class="form2">
+      <form
+        autocomplete="new-password"
+        #form="ngForm"
+        (submit)="onSubmit(form)"
+      >
+        <input type="hidden" name="id" [value]="service.formData.id" />
+        <input type="hidden" name="active" [value]="service.formData.active" />
+
+        <h1><b>REJESTRACJA</b></h1>
+        <div class="form-control">
+          <label for="email">E-mail</label>
+          <input
+            autocomplete="new-email"
+            placeholder="Podaj login"
+            #email="ngModel"
+            name="email"
+            required
+            class="required"
+            [(ngModel)]="service.formData.email"
+          />
+        </div>
+
+        <div class="form-control">
+          <label for="password">Hasło</label>
+          <input
+            autocomplete="new-password"
+            placeholder="Podaj hasło"
+            #password="ngModel"
+            name="password"
+            type="password"
+            required
+            class="required"
+            [(ngModel)]="service.formData.password"
+          />
+        </div>
+        <p class="break">
+          Hasło musi składać się z małej litery, dużej litery, znaku specjalnego
+          oraz liczby, a także powinno mieć przynajmniej 12 znaków
+        </p>
+        <button class="button-44" type="submit">
+          <b>ZAREJESTRUJ SIĘ</b>&#8594;
+        </button>
+      </form>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,31 @@
+<body>
+  <div class="heading">
+    <h1><br />Podsumowanie!<br /><br /></h1>
+  </div>
+  <div class="container">
+    <section class="about">
+      <div class="about-image">
+        <img
+          [src]="this.reservation_details.movie.image"
+          [alt]="this.reservation_details.movie.title"
+        />
+      </div>
+      <div class="about-content">
+        <h1>WWF Cinema</h1>
+        <h2>Podsumowanie zakupu<br /><br /></h2>
+        <p>
+          Film: {{ this.reservation_details.movie.title }}<br />
+          Dzień: {{ this.reservation_details.day }}<br />
+          Godzina: {{ this.reservation_details.hour }}<br />
+          Wybrane miejsca: {{ this.reservation_details.seats }}<br />
+          Login: {{ this.email }} <br />
+          Koszt: {{ 20 * this.reservation_details.seats.length }} zł<br /><br />
+        </p>
+      </div>
+    </section>
+    <div class="button-container">
+      <a class="" routerLink="/seats">Powrót</a>
+      <a class="" (click)="moveOn()">Przejdź dalej</a>
+    </div>
+  </div>
+</body>
