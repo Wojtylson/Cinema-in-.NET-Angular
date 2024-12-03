@@ -29,8 +29,8 @@ Aby utworzyć bazę i włączyć backend, czyli Web API należy w terminalu wpis
 A następnie uruchomić projekt klikając "Run project associated with this file";
 <br>
 Aby uruchomić frontend trzeba otworzyć folder frontend w edytorze kodu, upewnić się, że posiadana jest właściwa wersja Angulara i w terminalu wpisać:<br>
-```
-`ng serve --ssl true`
-```
+
+- `ng serve --ssl true`
+
 <br>
 Jeśli o niczym nie zapomniałem, a także jeśli wszystko udało się włączyć to program powinien się włączyć.
